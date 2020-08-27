@@ -18,7 +18,7 @@ const createWindow = () => {
   });
 
   // and load the index.html of the app.
-  mainWindow.loadFile(path.join(__dirname, 'calendar/example00-basic.html'));
+  mainWindow.loadFile(path.join(__dirname, 'calendar/index.html'));
   mainWindow.setMenu(null);
   mainWindow.menu
   // Open the DevTools.
