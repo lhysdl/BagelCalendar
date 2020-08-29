@@ -1,5 +1,5 @@
 # BagelCalendar
-### Simple calendar desktop app (windows and mac) 
+### Simple calendar desktop app
 ### Inspired by TUI.Calendar and Electron
 
 ### light mode:
@@ -8,6 +8,8 @@
 ### dark mode:
 ![Alt text](src/calendar/images/screen-shot-dark.png?raw=true)
 
+## Try it out
+MACOS: out/make/BagelCalendar-1.0.0.dmg
 
 ## Get Start
 
