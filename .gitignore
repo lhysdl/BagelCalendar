@@ -103,8 +103,8 @@ dist
 # TernJS port file
 .tern-port
 
-# Out
-out/
+#out
+out/BagelCalendar-darwin-x64/
 
 # package-lock
 package-lock.json
