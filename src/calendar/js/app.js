@@ -1,20 +1,23 @@
 'use strict';
+
+const { nativeTheme } = require("electron").remote;
+
 /* eslint-disable */
 /* eslint-env jquery */
 /* global moment, tui, chance */
 /* global findCalendar, CalendarList, ScheduleList, generateSchedule */
 
-if(!store.get('darkMode')){
-    store.set('darkMode',false);
-}
+// if(!store.get('darkMode')){
+//     store.set('darkMode',false);
+// }
     
-let darkMode = store.get('darkMode');
+// let darkMode = store.get('darkMode');
 
-if(darkMode){
-    $('.dark-light').bootstrapToggle('on');
-} else {
-    $('.dark-light').bootstrapToggle('off');
-}
+// if(darkMode){
+//     $('.dark-light').bootstrapToggle('on');
+// } else {
+//     $('.dark-light').bootstrapToggle('off');
+// }
 
 (function(window, Calendar) {
     var cal, resizeThrottled;
@@ -29,7 +32,7 @@ if(darkMode){
         useCreationPopup: useCreationPopup,
         useDetailPopup: useDetailPopup,
         calendars: CalendarList,
-        theme:darkMode ? THEME_DARK : THEME_DOORAY,
+        theme: nativeTheme.shouldUseDarkColors ? THEME_DARK : THEME_DOORAY,
         template: {
             milestone: function(model) {
                 return '<span class="calendar-font-icon ic-milestone-b"></span> <span style="background-color: ' + model.bgColor + '">' + model.title + '</span>';
@@ -99,6 +102,14 @@ if(darkMode){
             return true;
         }
     });
+
+    nativeTheme.on('updated', function theThemeHasChanged () {
+        updateMyAppTheme(nativeTheme.shouldUseDarkColors)
+    })
+
+    function updateMyAppTheme(isDark){
+        cal.setTheme(isDark ? THEME_DARK : THEME_DOORAY);
+    }
 
     /**
      * Get time template for time and all-day
@@ -216,15 +227,15 @@ if(darkMode){
         setSchedules();
     }
 
-    function onChangeMode() {
-        if (darkMode) {
-            cal.setTheme(THEME_DOORAY);
-        } else {
-            cal.setTheme(THEME_DARK);
-        }
-        darkMode = !darkMode;
-        store.set('darkMode',darkMode);
-    }
+    // function onChangeMode(e) {
+    //     darkMode = e.target.checked
+    //     if (darkMode) {
+    //         cal.setTheme(THEME_DARK);
+    //     } else {
+    //         cal.setTheme(THEME_DOORAY);
+    //     }
+    //     store.set('darkMode',darkMode);
+    // }
 
     function onNewSchedule() {
         var title = $('#new-schedule-title').val();
@@ -504,7 +515,7 @@ if(darkMode){
 
     function setEventListener() {
         $('#menu-navi').on('click', onClickNavi);
-        $('.dark-light').on('change', onChangeMode);
+        // $('.dark-light').on('change', onChangeMode);
         $('.dropdown-menu a[role="menuitem"]').on('click', onClickMenu);
         $('#lnb-calendars').on('change', onChangeCalendars);
 
