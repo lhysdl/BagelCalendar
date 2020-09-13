@@ -108,3 +108,6 @@ out/BagelCalendar-darwin-x64/
 
 # package-lock
 package-lock.json
+
+#.DS_Store
+.DS_Store
