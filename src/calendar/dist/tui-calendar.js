@@ -26270,7 +26270,7 @@ Weekday.prototype._getDayBackgroundColor = function(theme, day) {
         if (day === 0 || day === 6) {
             color = theme.month.weekend.backgroundColor;
         } else {
-            color = 'inherit';
+            color = theme.common.backgroundColor;
         }
     }
 

@@ -25,7 +25,7 @@ var THEME_DARK = {
     // month day grid cell 'day'
     'month.holidayExceptThisMonth.color': '#f3acac',
     'month.dayExceptThisMonth.color': '#aaa',
-    'month.weekend.backgroundColor': '#2f3437',
+    'month.weekend.backgroundColor': '#373c3f',
     'month.day.fontSize': '16px',
 
     // month schedule style
