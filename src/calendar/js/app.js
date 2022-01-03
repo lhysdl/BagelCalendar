@@ -127,7 +127,9 @@ const { nativeTheme } = require("electron").remote;
             html.push('<span class="calendar-font-icon ic-lock-b"></span>');
             html.push(' Private');
         } else {
-            if (schedule.isReadOnly) {
+            if (schedule.state == "Done") {
+                html.push('<span>☑️</span>')
+            } else if (schedule.isReadOnly) {
                 html.push('<span class="calendar-font-icon ic-readonly-b"></span>');
             } else if (schedule.recurrenceRule) {
                 html.push('<span class="calendar-font-icon ic-repeat-b"></span>');
@@ -265,7 +267,7 @@ const { nativeTheme } = require("electron").remote;
             raw: {
                 location: location
             },
-            state: 'Busy'
+            state: 'Done'
         }]);
 
         $('#modal-new-schedule').modal('hide');

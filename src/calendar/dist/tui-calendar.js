@@ -13529,7 +13529,7 @@ MonthCreation.prototype._onDblClick = function(e) {
     this._createSchedule({
         start: range.start,
         end: range.end,
-        isAllDay: false,
+        isAllDay: true,
         triggerEvent: eventData.triggerEvent
     });
 
@@ -13561,7 +13561,7 @@ MonthCreation.prototype._onClick = function(e) {
             self._createSchedule({
                 start: range.start,
                 end: range.end,
-                isAllDay: false,
+                isAllDay: true,
                 triggerEvent: eventData.triggerEvent
             });
         }
@@ -21184,11 +21184,11 @@ var helpers = {
     },
 
     'popupStateFree-tmpl': function() {
-        return 'Free';
+        return 'Done';
     },
 
     'popupStateBusy-tmpl': function() {
-        return 'Busy';
+        return 'Undo';
     },
 
     'titlePlaceholder-tmpl': function() {
