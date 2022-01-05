@@ -13587,7 +13587,7 @@ MonthCreation.prototype._adjustStartAndEndTime = function(start, end) {
         minutes = 30;
     }
     start.setHours(hours, minutes, 0, 0);
-    end.setHours(hours + 1, minutes, 0, 0);
+    end.setHours(hours, minutes, 0, 0);
 
     return {
         start: start,
