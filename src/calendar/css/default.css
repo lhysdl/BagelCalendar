@@ -162,6 +162,11 @@ body {
 
 #menu {
   padding: 5px 5px 5px 80px;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  z-index: 3;
+  border-bottom: 1px solid #ddd;
 }
 
 #dropdownMenu-calendarType {
