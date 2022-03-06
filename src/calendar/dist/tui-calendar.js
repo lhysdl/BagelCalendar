@@ -20327,9 +20327,7 @@ ScheduleCreationPopup.prototype._validateForm = function(title, startDate, endDa
 ScheduleCreationPopup.prototype._getRangeDate = function(startDate, endDate, isAllDay) {
     if (isAllDay) {
         startDate.setHours(0, 0, 0);
-        endDate = datetime.isStartOfDay(endDate) ?
-            datetime.convertStartDayToLastDay(endDate) :
-            endDate.setHours(23, 59, 59);
+        endDate.setHours(23, 59, 59);
     }
 
     /**
